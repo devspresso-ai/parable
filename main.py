@@ -1,7 +1,16 @@
 import session_manager
-from flask import Flask, render_template
+import json
+import os
+import inferences_service
+from constants import INFERENCE_VALUE_RESPONSE_KEY, INFERENCE_LANGUAGE_RESPONSE_KEY, OPENAI_KEY_PARAM_NAME, \
+    OPENAI_ORGANIZATION_ID_PARAM_NAME
+from dotenv import load_dotenv
+from flask import Flask, request, Response, render_template
+from flask_sslify import SSLify
 
 app = Flask(__name__)
+SSLify(app)
+load_dotenv()
 
 @app.route('/')
 def index():
@@ -24,7 +33,7 @@ def infer():
     inference_input: str = request.json
     openai_api_key: str = request.args[OPENAI_KEY_PARAM_NAME]
     openai_organization_id: str = request.args[OPENAI_ORGANIZATION_ID_PARAM_NAME]
-    inference: CodeInferenceResult = inferences_service.infer(
+    inference: str = inferences_service.infer(
         inference_input,
         openai_api_key,
         openai_organization_id)
