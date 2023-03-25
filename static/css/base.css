@@ -1,0 +1,88 @@
+/* Set colors */
+:root {
+    --primary-color: #FF5A5F;
+    --secondary-color: #484848;
+    --light-color: #F7F7F7;
+}
+
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Apply new styles to the page */
+body {
+    background-color: var(--light-color);
+}
+
+img {
+    border-radius: 20px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+input,
+button {
+    border-radius: 20px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: white;
+}
+
+input {
+    margin-right: 20px;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff4248;
+    transition: background-color 0.3s;
+}
+
+/* Center elements vertically */
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.w-container {
+    width: 100%;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999; /* This will make sure it's in front of all other elements */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-img, .logo-title  {
+    float: left; /* Align the image to the left */
+}
+
+.brand-block {
+    float: left; /* Align the brand link to the left */
+    margin-left: 10px; /* Add some margin to the left */
+}
+
+.nav-menu {
+    float: right; /* Align the nav menu to the right */
+    margin-right: 10px; /* Add some margin to the right */
+    align-items: center;
+}

@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>My Website</title>
-</head>
-<body>
-	<h1>Welcome to my website</h1>
-	<p>This is the index page</p>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %} Parable {% endblock %}
+{% block content %}
+<div class="container" style="display: flex; flex-direction: column; align-items: center;">
+	<img src="#" style="width: 800px; height: 400px;">
+	<div>
+		<p id="story-text">Enter your text:</p>
+	</div>
+	<div style="display: flex; align-items: center; margin-top: 20px;">
+		<input type="text" style="margin-right: 20px;">
+		<button>Next</button>
+	</div>
+</div>
+<script src="{{ url_for('static', filename='js/base.js') }}" type="text/javascript" charset="utf-8"></script>
+{% endblock %}
