@@ -84,3 +84,5 @@ Secrets.swift
 .env
 .idea
 __pycache__
+
+env

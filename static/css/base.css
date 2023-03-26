@@ -55,6 +55,7 @@ button:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 150px;
 }
 
 .w-container {
@@ -85,4 +86,15 @@ button:hover {
     float: right; /* Align the nav menu to the right */
     margin-right: 10px; /* Add some margin to the right */
     align-items: center;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+}
+
+.page {
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 30px;
 }
