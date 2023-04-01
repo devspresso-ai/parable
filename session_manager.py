@@ -1,6 +1,5 @@
 from flask import session
 from typing import Any, Dict, Optional
-from constants import OPENAI_KEY_PARAM_NAME, OPENAI_ORGANIZATION_ID_PARAM_NAME
 
 MODEL_CONTEXT_KEY: str = "model-context"
 
@@ -35,15 +34,3 @@ def clear_model_context(model_name: str):
 def clear_all_model_contexts():
     if MODEL_CONTEXT_KEY in session:
         del session[MODEL_CONTEXT_KEY]
-
-def get_openai_key() -> Optional[str]:
-    return session.get(OPENAI_KEY_PARAM_NAME)
-
-def set_openai_key(value: str) -> None:
-    session[OPENAI_KEY_PARAM_NAME] = value
-
-def get_openai_organization_id() -> Optional[str]:
-    return session.get(OPENAI_ORGANIZATION_ID_PARAM_NAME)
-
-def set_openai_organization_id(value: str) -> None:
-    session[OPENAI_ORGANIZATION_ID_PARAM_NAME] = value

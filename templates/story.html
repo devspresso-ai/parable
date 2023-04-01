@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %} Parable {% endblock %}
+{% block content %}
+<img id="story-image" src="#" style="width: 800px; height: 400px;">
+<div>
+    <p id="story-text"></p>
+</div>
+<div style="display: flex; align-items: center; margin-top: 20px;">
+    <button>Next</button>
+</div>
+<script type="text/javascript">
+    let storyText = "{{ story_text }}"
+</script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/story.js') }}"></script>
+{% endblock %}

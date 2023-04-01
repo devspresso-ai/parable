@@ -24,7 +24,7 @@ img {
 }
 
 input,
-button {
+.button {
     border-radius: 20px;
     border: none;
     padding: 10px 20px;
@@ -36,21 +36,20 @@ input {
     margin-right: 20px;
 }
 
-button {
+.button {
     background-color: var(--primary-color);
     color: white;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
-button:hover {
+.button:hover {
     background-color: #ff4248;
     transition: background-color 0.3s;
 }
 
 /* Center elements vertically */
 .container {
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

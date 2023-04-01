@@ -3,43 +3,20 @@
 {% block title %} Parable {% endblock %}
 {% block content %}
 <div class="container" style="display: flex; flex-direction: column; align-items: center;">
-	<div id="story">
-		<h2 id=story-title></h2>
-    <div id="pages-container"></div>
-    <!-- <div id="story-content"></div> -->
-	</div>
-	<div id="story-builder">
-    <!-- <label>Write a story about</label><br/> -->
-    <!-- <textarea id="story-builder-input" rows="5" cols="50"></textarea> -->
-    <!-- <div>
-      Fill in:
-      <button type="button" id="fill_in_tortoise_hare">Tortoise and the Hare</button>
-    </div> -->
-    <button id="story_tortoise_hare">Tortoise and the Hare</button>
-    <div id="story-modifiers">
-      <h4>Level</h4>
-      <button id="difficulty-1-sentence">one sentence</button>
-      <button id="difficulty-3-sentence">three sentences</button>
-      <!-- <button id="difficulty-3">3 years old</button> -->
-      <!-- <button id="difficulty-3">8 years old</button> -->
-      <button id="difficulty-8th-grade">8th grade (14)</button>
-      <button id="difficulty-12th-grade">12th grade (18)</button>
-      <button id="difficulty-16th-grade">16th grade</button>
-    </div>
-    <div id="story-modifiers">
-      <h4>Modifiers</h4>
-      <button id="mod-animal-habitats">+ animal habitats</button>
-      <button id="mod-animal-migration">+ animal migrations</button>
-      <button id="mod-animal-geneology">+ animal geneology</button>
-    </div>
-  </div>
-	<!-- <img src="#" style="width: 800px; height: 400px;">
-	<div>
-		<p id="story-text">Enter your text:</p>
-	</div>
-	<div style="display: flex; align-items: center; margin-top: 20px;">
-		<input type="text" style="margin-right: 20px;">
-		<button>Next</button>
-	</div> -->
+    <form id="story-builder" method="post" action="{{ url_for('story') }}">
+        <label for="story-selector">Select a Story</label>
+        <select id="story-selector" name="story_selection">
+            <option value="Tortoise and the Hare">Tortoise and the Hare</option>
+        </select>
+        </br></br>
+        <label for="difficulty-level">Select a Reading Level</label>
+        <select id="difficulty-level" name="difficulty_level">
+        </select>
+        </br></br>
+        <label for="main-characters">Describe the Main Character(s)</label>
+        <input id="main-characters" name="character_description">
+        </br></br>
+        <button type="submit" class="button">Generate Story</button>
+    </form>
 </div>
 {% endblock %}
